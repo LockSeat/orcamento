@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="orcamento.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        .form-container .form-group {
+            margin-bottom: 15px;
+        }
+
+        .char-count {
+            font-size: 12px;
+            text-align: right;
+            color: #555555;
+        }
+
+        .char-limit-message {
+            color: #d9534f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><a href="index.html"><img src="imagens/logo.png" alt="Logo do site" /></a></div>
+        <div class="con">
+            <h1 style="font-size: 100px; color: var(--branco);">LockSeat</h1>
+        </div>
+        <div class="menu">
+            <nav style="color: var(--branco);">
+                <a href="index.html">Página inicial</a> |
+                <a href="especificacoes.html" rel="prev">Especificações Técnicas</a> |
+                <a href="orcamento.html">Orçamento</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Solicitação de Orçamento</h1>
+            <form action="#" method="post">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required />
+                <br />
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+                <br />
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone" required />
+                <br />
+                <label for="CNPJ">Informar CNPJ:</label>
+                <input type="text" id="CNPJ" name="CNPJ" maxlength="18" placeholder="00.000.000/0000-00" required
+                    oninput="validarCNPJ()" />
+                <br />
+                <span id="cnpj-error" style="color: red; display: none;">CNPJ inválido</span>
+                <br />
+                <label for="service">Serviço Solicitado:</label>
+                <select id="service" name="service" required onchange="atualizarFormulario()">
+                    <option value="">Selecione</option>
+                    <option value="cinema">Automação para cinema</option>
+                    <option value="show">Automação para show</option>
+                    <option value="teatro">Automação para teatro</option>
+                    <option value="estadio">Automação para estádio</option>
+                </select>
+                <br />
+                <div id="formularioDinamico">
+                    <!-- Campos dinâmicos serão inseridos aqui -->
+                </div>
+                <label for="estimatedBudget">Orçamento Estimado:</label>
+                <input type="text" id="estimatedBudget" name="estimatedBudget" readonly />
+                <br />
+                <div class="form-group">
+                    <label for="comments">Comentários:</label>
+                    <textarea id="comments" name="comments" rows="4" maxlength="200"></textarea>
+                    <div class="char-count" id="charCount">0/200</div>
+                    <p id="charLimitMessage" class="char-limit-message"></p>
+                </div>
+                <br />
+                <button class="but" type="submit">Enviar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="redes" style="display: inline-block;">
+            <button><i class="fa-brands fa-instagram"></i><img src="imagens/insta.png" width="20px"
+                    height="20px"></button>
+            <button><i class="fa-brands fa-whatsapp"></i><img src="imagens/whatsapp.png" width="20px"
+                    height="20px"></button>
+            <button><i class="fa-brands fa-linkedin"></i><img src="imagens/linkedin.png" width="20px"
+                    height="20px"></button>
+        </div>
+        <br /><br />
+        <p>&copy;Site oficial LockSeat. Todos os direitos reservados</p>
+    </footer>
+
+    <script src="orcamento.js"></script>
+</body>
+
+</html>
