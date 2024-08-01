@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --preto: #000000;
+    --branco: #ffffff;
+    --azulfederal: #020F59;
+    --prata: #C0C0C0;
+    --viridiano: #558f85;
+    --bronz: #cd7f32;
+    --verdemeia-noite: #104154;
+    --verde: #047615;
+}
+
+body {
+    background-color: var(--prata);
+}
+
+a {
+    color: var(--branco);
+    /* Cor do link */
+    text-align: right;
+}
+
+a:visited {
+    color: var(--prata);
+    /* Cor do link após ser visitado */
+}
+
+a:hover {
+    color: var(--viridiano);
+    /* Cor do link quando o mouse está sobre ele */
+}
+
+.titulo {
+    text-align: center;
+}
+
+.con {
+    max-width: 1080px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--azulfederal);
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: var(--branco);
+    display: flex;
+}
+
+.logo,
+.botao {
+    width: 25%;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 60px;
+    flex-direction: column;
+    display: inline-block;
+}
+
+.menu {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    color: var(--branco);
+}
+
+.menu nav a {
+    color: var(--branco);
+    text-decoration: none;
+    height: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+    position: relative;
+}
+
+.menu nav a::after {
+    content: " ";
+    width: 0px;
+    height: 3px;
+    background-color: var(--branco);
+    position: absolute;
+    top: 25px;
+    left: 0;
+    transition: width 0.5s;
+}
+
+.menu nav a:hover::after {
+    width: 100%;
+}
+
+.botao button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botao button i {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+main {
+    height: 100%;
+    margin: 0 15px 0 15px;
+    padding: 5em 2em 2em;
+    background-color: var(--branco);
+    box-shadow: 0 0 10px;
+}
+
+footer {
+    background-color: var(--azulfederal);
+    color: var(--branco);
+    font-size: 15px;
+    padding: 10px 0 10px 0;
+    border: 0;
+    margin: 0;
+    position: relative;
+    text-align: center;
+}
+
+.video {
+    text-align: center;
+    padding: 0 20px 0 20px;
+    margin: auto;
+}
+
+.totem {
+    text-align: center;
+}
+
+.imagem {
+    text-align: center;
+}
+
+.cadeira {
+    width: 500px;
+    height: 500px;
+    background-image: url(imagens/aberto.png);
+    margin: auto;
+}
+
+.cadeira:hover {
+    background-image: url(imagens/fechado.png);
+}
